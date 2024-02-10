@@ -1,55 +1,43 @@
 <?php 
+//condition if/else
+//(int) permet de convertir le type 
+//readline() permet de récupérer une saisie user
+//par défaut le type est string, et il faut penser à convertir son type selon les besoin 
 /*
-//tableau simple. Indexé automatiquement
-$notes = [10, 20, 12, 14, 8.5];
-echo $notes[1]; //20
-//tableau multi dimension
-$eleves = ['Marc', 'Doe', [10, 20, 40]];
-//pour accéder à la deuxième notes
-echo $eleves[2][1]; //20
+$note = (int)readline("Saisir la note :\n");
+if($note > 10){
+    echo "Tu as bien travaillé\n";
+}elseif($note < 10){
+    echo "Il va falloir bosser la\n";
+}else{
+    echo "C'est vraiment limite\n";
+}
+*/
+//=== permet de faire une comparaison strict. C'est la méthode à privilieger
 
-//tableau a clé
-$eleve = [  
-    'nom' => 'Doe',
-    'prenom' => 'John',
-    'notes' => [10, 20, 15]
-];
-echo $eleve['nom'];
-echo $eleve['notes'][1]; //20
-echo $eleve['nom'] . ' ' . $eleve['prenom']; //Doe John
+//switch est une syntaxe alternative 
+/*
+$action = (int)readline("Saisir une action : 1 - atttaque 2- défence 3 - fuite\n");
+switch($action){
+    case 1:
+        echo "Tu t'avances et tu attaques.\n";
+        break;
+    case 2:
+        echo "Tu te prôtège, et tu encaisse l'attaques.\n";
+        break;
+    case 3:
+        echo "Tu fuis comme une grosse merde.\n";
+        break;
+    default:
+        echo "Erreur, commande non disponible.\n";
+}
+*/
 
-//modifier un élément du tableau 
-$notes[] = 15; //on ajoute 15 au tableau 
-$eleve['nom'] = "Zwing"; //on modifie la valeur du tableau 
-$eleve['notes'][3] = 16; //on modifie la note de l'élève
-
-//pour afficher un tableau on utilise print_r()
-print_r($eleve);
-
-(
-    [nom] => Zwing
-    [prenom] => John
-    [notes] => Array
-        (
-            [0] => 10
-            [1] => 20
-            [2] => 15
-            [3] => 16
-        )
-
-)*/
-
-$classe = [
-    [
-        'nom' => 'Doe',
-        'prenom' => 'John',
-        'notes' => [10, 14, 12]
-    ],
-    [
-        'nom' => 'Doe',
-        'prenom' => "Jenny",
-        'notes' => [16, 13, 17]
-    ]
-];
-//on veut afficher la dernière notes dans le premier tableau 
-echo $classe[0]['notes'][2]; //12
+$heure = (int)readline("Entrez une heure :\n");
+if(($heure > 9 && $heure < 12) || ($heure > 14 && $heure < 19)){
+//pour vérifier l'inverse on met un ! on vient vérifier l'inverse de ce qui est vérifié true devien false et inversement
+//if(!(($heure > 9 && $heure < 12) || ($heure > 14 && $heure < 19)){
+    echo "Le magasin est ouvert\n";
+}else{
+    echo "Le magasin est fermé\n";
+} 
