@@ -1,9 +1,11 @@
 <?php
+include_once 'function.php';
 //on créer une variable qui prendra la valeur de title de la page
 $title = "Accueil";
 //isset
 //on vient importer le code du header qui est commune à chaque page du site.
 $nav = "index";
+// printr($_SERVER);
 require 'header.php';
 ?>
 
