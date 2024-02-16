@@ -1,4 +1,7 @@
-<?php include 'header.php' ?>
+<?php 
+$title = "Contact";
+$nav = "contact";
+include 'header.php' ?>
 
 <main class="container">
     <h1 class="text-uppercase text-center">contact</h1>
