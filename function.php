@@ -1,4 +1,19 @@
 <?php
+function footer_item(string $lien, string $titre, string $linkClass = "") :string
+{
+    $classe = "nav-link";
+    $path = getBasenamePath($_SERVER['REQUEST_URI']);
+    if($path !== $lien){
+        $classe .= ' text-black';
+    }
+    $html = <<<HTML
+    <li class="nav-item">
+        <a class="$classe $linkClass" href="$lien">$titre</a>
+    </li>
+HTML;
+    return $html;
+}
+
 /**
  * Cette fonction prend un tableau, et retourne ses valeurs avec les balises <pre>...</pre>
  * @author : ClementGlt

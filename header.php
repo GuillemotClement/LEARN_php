@@ -35,8 +35,9 @@ require_once 'function.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <?=pageActive($_SERVER['SCRIPT_NAME'], 'index')?>
-                        <?=pageActive($_SERVER['SCRIPT_NAME'], 'contact')?>
+                        <?php 
+                        $linkClass = "nav-link";
+                        require_once 'menu.php'?>
                     </ul>
                 </div>
             </div>
