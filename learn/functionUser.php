@@ -68,3 +68,4 @@ function demander_creneaux(?string $sentence = "Saisir vos créneaux : ") :array
 
 $creneaux = demander_creneaux();
 print_r($creneaux);
+
