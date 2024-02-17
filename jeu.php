@@ -4,15 +4,15 @@ $erreur = null;
 $succes = null;
 $value = null;
 
-if(isset($_GET['chiffre'])){
-    if($_GET['chiffre'] > $aDeviner){
+if(isset($_POST['chiffre'])){
+    if($_POST['chiffre'] > $aDeviner){
         $erreur = "Le chiffre est trop grand";
-    }elseif($_GET['chiffre'] < $aDeviner){
+    }elseif($_POST['chiffre'] < $aDeviner){
         $erreur = "Le chiffre est trop petit";
     }else{
         $succes = "Bravo, vous avez deviner";
     }
-    $value = (int)$_GET['chiffre'];
+    $value = (int)$_POST['chiffre'];
 }
 
 require 'header.php'; 
@@ -31,7 +31,7 @@ require 'header.php';
 
 
 <main class="container my-3">
-    <form action="/graphikart/jeu.php" method="get">
+    <form action="/graphikart/jeu.php" method="post">
         <h3>Mon petit formulaire</h3>
         <div class="mb-3">
             <label for="" class="form-label"></label>
