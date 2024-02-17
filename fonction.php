@@ -1,5 +1,14 @@
 <?php 
 
+function creneaux_html(array $creneaux)
+{
+    $phrases = [];
+    foreach($creneaux as $creneau){
+        $phrases[] = "de <strong>{$creneau[0]}h</strong> à <strong>{$creneau[1]}h</strong>";
+    }
+    return 'Ouvert de ' . implode(' et ', $phrases);
+}
+
 /**
  * Creation dynamique des boutons radio
  *

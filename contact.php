@@ -1,11 +1,23 @@
 <?php 
 $title = "Contact";
-$nav = "contact";
-include 'header.php' ?>
+require_once 'config.php';
+require_once 'fonction.php';
+$creneaux = creneaux_html(CRENEAUX);
+include 'header.php' 
+?>
+
 
 <main class="container">
-    <h1 class="text-uppercase text-center">contact</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores harum ut optio rerum, molestiae quia natus dolor nihil sit quisquam suscipit cum assumenda? Vero iste fugiat assumenda unde laboriosam maiores.</p>
+    <div class="row">
+        <div class="col">
+            <h2>Nous contacter</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est illo doloremque qui atque, delectus odit, adipisci, quo rerum culpa iure accusamus hic molestiae blanditiis exercitationem facere! Cumque ipsam neque soluta.</p>
+        </div>
+        <div class="col">
+            <h2>Nos horaires d'ouvertures</h2>
+            <p><?=$creneaux?></p>
+        </div>
+    </div>
 </main>
 
 <?php 
