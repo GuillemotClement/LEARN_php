@@ -1,36 +1,44 @@
 <?php 
 require 'header.php'; 
 require_once 'oldFunction.php';
+
+$parfums = [
+    'Fraise'=>4,
+    'Chocolat'=>5,
+    'Vanille'=>3,
+];
+
+$cornets = [
+    'Pot'=>2,
+    'Cornet'=>3,
+];
+
+$supplement = [
+    'Pépite de chocolat'=>2,
+    'Chantilly'=> 0.5,
+];
+
 printr($_GET);
+
 ?>
 
 
 <main class="container my-3">
     <form action="/graphikart/jeu.php" method="get">
-        <h3>Mon petit formulaire</h3>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="parfum[]" value="fraise" id="fraise">
-            <label class="form-check-label" for="fraise">
-                Fraise
-            </label>
+        <div class="choiceParfum mb-3">
+            <?=setCheckBox($parfums, 'parfums')?>
+            
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="parfum[]" value="vanille" id="vanille">
-            <label class="form-check-label" for="vanille">
-                Vanille
-            </label>
+        <div class="choiceCornet mb-3">
+            <?=setRadio($cornets, "cornets")?> 
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="parfum[]" value="chocolat" id="chocolat">
-            <label class="form-check-label" for="chocolat">
-                Chocolat
-            </label>
+        <div class="choiceSupplement mb-3">
+            <?=setCheckBox($supplement, 'supplement')?>
         </div>
-        <input type="text" name="demo[]">
-        <input type="text" name="demo[]">
-        <div class="ctn-btn my-3">
-            <button type="submit" class="btn btn-primary shadow">Deviner</button>
-        </div>
+    <button type="submit">Submit</button>
+
+
+
     </form>
 </main>
 

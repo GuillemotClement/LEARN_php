@@ -32,3 +32,48 @@ function nav_menu(string $linkClass = ""):string
     nav_item("contact.php", 'Contact', $linkClass) . 
     nav_item("jeu.php", 'Jeu', $linkClass);
 }
+
+
+/**
+ * Cette fonction permet de créer une liste checkbox 
+ *
+ * @param array $arr - le tableau qui contient les différentes valeurs 
+ * @param string $name - le name appliquer sur cette liste de checkbox
+ * @return void - retourne le HTML de la liste checkbox
+ */
+function setCheckBox(array $arr, string $name)
+{   
+    foreach($arr as $key=>$value){
+        $html = <<<HTML
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="{$key}" id="{$key}" name="{$name}[]">
+            <label class="form-check-label" for="{$key}">
+                {$key} - {$value} $
+            </label>
+        </div>
+        HTML;   
+        echo $html;
+    }
+}
+
+/**
+ * Cette fonction permet de créer une liste radio
+ *
+ * @param array $arr - le tableau qui contient les différentes valeurs 
+ * @param string $name - le name appliquer sur cette liste de checkbox
+ * @return void - retourne le HTML de la liste radio
+ */
+function setRadio(array $arr, string $name)
+{
+    foreach($arr as $key=>$value){
+        $html = <<<HTML
+        <div class="form-check">
+            <input class="form-check-input" type="radio" value="{$key}" id="{$key}" name="{$name}">
+            <label class="form-check-label" for="{$key}">
+                {$key} - {$value} $
+            </label>
+        </div>
+        HTML;   
+        echo $html;
+    }
+}
