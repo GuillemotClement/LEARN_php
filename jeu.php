@@ -1,43 +1,34 @@
 <?php 
-$aDeviner = 150;
-$erreur = null;
-$succes = null;
-$value = null;
-
-if(isset($_POST['chiffre'])){
-    if($_POST['chiffre'] > $aDeviner){
-        $erreur = "Le chiffre est trop grand";
-    }elseif($_POST['chiffre'] < $aDeviner){
-        $erreur = "Le chiffre est trop petit";
-    }else{
-        $succes = "Bravo, vous avez deviner";
-    }
-    $value = (int)$_POST['chiffre'];
-}
-
 require 'header.php'; 
+require_once 'oldFunction.php';
+printr($_GET);
 ?>
 
 
-<?php if($erreur):?>
-    <div class="alert alert-danger">
-        <?= $erreur ?>
-    </div>
-<?php elseif($succes):?>
-    <div class="alert alert-success">
-        <?=$succes?>
-    </div>
-<?php endif?>
-
-
 <main class="container my-3">
-    <form action="/graphikart/jeu.php" method="post">
+    <form action="/graphikart/jeu.php" method="get">
         <h3>Mon petit formulaire</h3>
-        <div class="mb-3">
-            <label for="" class="form-label"></label>
-            <input type="number" class="form-control" id="" name="chiffre" placeholder="entre 0 et 1000" value="<?=$value?>">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="parfum[]" value="fraise" id="fraise">
+            <label class="form-check-label" for="fraise">
+                Fraise
+            </label>
         </div>
-        <div class="ctn-btn">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="parfum[]" value="vanille" id="vanille">
+            <label class="form-check-label" for="vanille">
+                Vanille
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="parfum[]" value="chocolat" id="chocolat">
+            <label class="form-check-label" for="chocolat">
+                Chocolat
+            </label>
+        </div>
+        <input type="text" name="demo[]">
+        <input type="text" name="demo[]">
+        <div class="ctn-btn my-3">
             <button type="submit" class="btn btn-primary shadow">Deviner</button>
         </div>
     </form>

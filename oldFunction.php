@@ -21,12 +21,11 @@ HTML;
  * @param array $arr le tableau à afficher
  * @return array le tableau avec les balises <pre>...</pre>
  */
-function printr(array $arr):array
+function printr(array $arr)
 {
     echo "<pre>";
     print_r($arr);
     echo "</pre>";
-    die;
 }
 
 /**
