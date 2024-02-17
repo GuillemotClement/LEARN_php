@@ -1,5 +1,44 @@
 <?php 
 
+/**
+ * Creation dynamique des boutons radio
+ *
+ * @param string $name
+ * @param string $value
+ * @param array $data
+ * @return string
+ */
+function radio(string $name, string $value, array $data):string
+{
+    $attributes = "";
+    if(isset($data[$name]) && $value === $data[$name]){
+        $attributes .= 'checked';
+    }
+    return <<<HTML
+    <input type="radio" name="{$name}" value="$value" {$attributes}>
+HTML;
+}
+
+/**
+ * Cette fonction permet de garder checked un élément qui a été cocher par l'user
+ *
+ * @param string $name
+ * @param string $value
+ * @param array $data
+ * @return string
+ */
+function checkbox(string $name, string $value, array $data) : string
+{
+    $attributes = "";
+    if(isset($data[$name]) && in_array($value, $data[$name])){
+        $attributes .= 'checked';
+    }
+    return <<<HTML
+    <input type="checkbox" name="{$name}[]" value="$value" {$attributes}>
+HTML;
+}
+
+
 
 /**
  * fonction permet de mettre en valeur le lien de la page active dans la navbar
