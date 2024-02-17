@@ -1,5 +1,5 @@
 <?php
-include_once 'function.php';
+
 //on créer une variable qui prendra la valeur de title de la page
 $title = "Accueil";
 //isset

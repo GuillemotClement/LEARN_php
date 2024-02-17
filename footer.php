@@ -8,9 +8,7 @@
     <div class="col">
         <h5 class="text-uppercase">Navigation</h5>
         <ul class="nav flex-column">
-            <?php 
-            $linkClass = "";
-            require 'menu.php'?>
+            <?= nav_menu('nav-link')?>
         </ul>
     </div>
 </div>

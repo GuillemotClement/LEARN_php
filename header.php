@@ -1,5 +1,5 @@
 <?php
-require_once 'function.php';
+require_once 'fonction.php';
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +35,7 @@ require_once 'function.php';
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <?php 
-                        $linkClass = "nav-link";
-                        require_once 'menu.php'?>
+                        <?= nav_menu('nav-link')?>
                     </ul>
                 </div>
             </div>
