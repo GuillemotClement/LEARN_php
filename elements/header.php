@@ -1,5 +1,6 @@
 <?php
-require_once 'fonction.php';
+//faciliter les liens 
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'fonction.php';
 ?>
 
 <!DOCTYPE html>

@@ -6,7 +6,7 @@ $title = "Accueil";
 //on vient importer le code du header qui est commune à chaque page du site.
 $nav = "index";
 // printr($_SERVER);
-require 'header.php';
+require 'elements/header.php';
 ?>
 
 <main class="container">
@@ -30,7 +30,7 @@ require 'header.php';
 
 <?php 
 //on vient imporer le footer qui est commun à chaque page
-require 'footer.php';
+require 'elements/footer.php';
 
 //démarrer un serveur local php
 // $ php -S localhost:8000 dans le terminal

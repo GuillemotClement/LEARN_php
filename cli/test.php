@@ -34,3 +34,31 @@ $parent = var_dump(dirname(__DIR__));
 //lire le contenu d'un fichier
 echo file_get_contents($fichier);
 //Hello WorldAblaplkakfi%      
+
+//utilisation de fopen
+//ressource serait un très gros fichier excel par exemple
+//l'argument 'r' pour mode lecture seul cf doc
+$ressource = fopen($fichierExcel, 'r');
+
+//pour lire un certain nombre de caractère
+//on vient lire les deux premiers octects
+echo fread($ressource, 2);
+
+//renvoi un tableau d'info sur le fichier
+var_dump(fstat($ressource));
+
+//lire une ligne courante. Il fait également avancer le curseur à la ligne suivante
+var_dump(fgets($ressource));
+
+//pour lire une ligne précise du document, on utilise une boucle qui amène à la ligne souhaité
+$k = 0;
+while($ligne = fgets($ressource)){
+    $k++;
+    if($k == 1230){
+        echo $ligne;
+        break;
+    }
+}
+
+//fermer le fichier
+fclose($fichier);
