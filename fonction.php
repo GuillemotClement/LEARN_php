@@ -1,12 +1,21 @@
 <?php 
+function dump($var)
+{
+    echo "<pre>";
+    var_dump($var);
+    echo "</pre>";
+}
 
 function creneaux_html(array $creneaux)
 {
+    if(empty($creneaux)){
+        return 'Le magasin est <strong>fermé</string>';
+    }
     $phrases = [];
     foreach($creneaux as $creneau){
         $phrases[] = "de <strong>{$creneau[0]}h</strong> à <strong>{$creneau[1]}h</strong>";
     }
-    return 'Ouvert de ' . implode(' et ', $phrases);
+    return 'Ouvert ' . implode(' et ', $phrases);
 }
 
 /**

@@ -2,7 +2,6 @@
 $title = "Contact";
 require_once 'config.php';
 require_once 'fonction.php';
-$creneaux = creneaux_html(CRENEAUX);
 include 'header.php' 
 ?>
 
@@ -15,7 +14,14 @@ include 'header.php'
         </div>
         <div class="col">
             <h2>Nos horaires d'ouvertures</h2>
-            <p><?=$creneaux?></p>
+            <ul>
+                <?php foreach(JOURS as $k=>$jour):?>
+                    <li>
+                        <strong><?=$jour?> :</strong>
+                        <?=creneaux_html(CRENEAUX[$k]);?>
+                    </li>
+                <?php endforeach;?>
+            </ul> 
         </div>
     </div>
 </main>
