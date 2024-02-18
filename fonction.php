@@ -1,4 +1,28 @@
 <?php 
+function select($name, $options, $value)
+{
+    $html_options = [];
+    foreach($options as $k => $option){
+        $attributes = $k == $value ? 'selected' : '';
+        $html_options[] = "<option value='$k'>$option</option>";
+    }
+    return "<select class='form-control' name='$name'" . implode($html_options) . '</select>';
+}   
+
+function in_creneau($heure, $creneaux)
+{
+    foreach($creneaux as $creneau){
+        $debut = $creneau[0];
+        $fin = $creneau[1];
+        if($heure >= $debut && $heure < $fin){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 function dump($var)
 {
     echo "<pre>";
