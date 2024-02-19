@@ -4,7 +4,7 @@ $title = "Menu";
 //on vient récupérer le fichier source
 $lignes = file(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'menuTsv.tsv');
 foreach($lignes as $k => $ligne){
-    $lignes[$k] = explode("\t)", trim($ligne));
+    $lignes[$k] = explode("\t", trim($ligne));
 }
 require 'elements/header.php';
 ?>
