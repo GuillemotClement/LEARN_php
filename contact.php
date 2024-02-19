@@ -1,6 +1,6 @@
 <?php 
 $title = "Contact";
-require_once 'config.php';
+require_once 'data/config.php';
 require_once 'fonction.php';
 date_default_timezone_set('Europe/Paris');
 $heure = (int)($_GET['heure'] ?? date('G'));
@@ -8,7 +8,7 @@ $jour = (int)($_GET['jour'] ?? date('N') - 1);
 $creneaux = CRENEAUX[$jour];
 $ouvert = in_creneau($heure, $creneaux);
 $color = $ouvert ? "green" : "red";
-include 'header.php' ;
+include 'elements/header.php' ;
 ?>
 
 
@@ -59,4 +59,4 @@ include 'header.php' ;
 </main>
 
 <?php 
-require 'footer.php';
+require 'elements/footer.php';

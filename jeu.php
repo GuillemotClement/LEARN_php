@@ -1,6 +1,6 @@
 <?php 
 $title = "Composer votre glace";
-require 'header.php'; 
+require 'elements/header.php'; 
 require_once 'oldFunction.php';
 
 $parfums = [
@@ -45,7 +45,7 @@ if(isset($_GET['supplement'])){
 //     }
 // }
 
-printr($_GET);
+// printr($_GET);
 
 ?>
 
@@ -99,5 +99,5 @@ printr($_GET);
 
 
 <?php 
-require 'footer.php';
+require 'elements/footer.php';
 ?>
