@@ -1,24 +1,15 @@
 <?php 
-$username = null;
-//creation de la clear cookie
-if(!empty($_GET['action']) && $_GET['action'] === 'deconnecter'){
-    //on détruit la valeur de 'utilisateur' dans $_cookie
-    unset($_COOKIE['utilisateur']);
-    //on fait un retour dans le passé sur le cookie pour le reset
-    setcookie('utilisateur', '', time()-10);
-}
-//on vérifie que le cookie est définit et qu'il contient bien la valeur username
-if(!empty($_COOKIE['utilisateur'])){
-    $username = $_COOKIE['utilisateur'];
-}
+//on utilise serialuze() pour convertir ke tableau en string utilisable par php
+$user = [
+    'prenom'=>"John",
+    'nom'=>"Doe",
+    'age'=>20,
+];
+setcookie('utilisateur', serialize($user));
 
-//on vérifie post a une valeur et on créer un cookie avec le nom que l'user à indiquer dans le formulaire
-//ce cookie est valable le temps que l'user ne quitte pas le navigateur
-if(!empty($_POST['username'])){
-    setcookie('username', $_POST['username'], time()+60*60*24*30);
-    $username = $_POST['username'];
-}
-
+//si on souhaite récupérer le tableau du cookie
+$utilisateur = $_COOKIE['utilisateur'];
+var_dump(unserialize($utilisateur)); //on peut afficher les valeurs du tableau contenu dans le cookie
 
 require 'elements/header.php';
 ?>
