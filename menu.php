@@ -2,9 +2,9 @@
 require_once 'fonction.php';
 $title = "Menu";
 //on vient récupérer le fichier source
-$lignes = file(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'menuTsv.tsv');
+$lignes = file(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'menuCsv.csv');
 foreach($lignes as $k => $ligne){
-    $lignes[$k] = explode("\t", trim($ligne));
+    $lignes[$k] = str_getcsv(trim($ligne, " \t\n\r\0\x0B,"));
 }
 require 'elements/header.php';
 ?>
@@ -18,7 +18,7 @@ require 'elements/header.php';
             <p>
                 <strong><?=$ligne[0]?></strong><br>
                 <?=$ligne[1]?>
-                <?=number_format($ligne[2], 2, ',', '  ')?> $
+                <strong><?=number_format($ligne[2], 2, ',', '  ')?> $</strong>
             </p>
         <?php endif?>
     <?php endforeach?>
