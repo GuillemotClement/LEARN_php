@@ -112,7 +112,8 @@ function nav_menu(string $linkClass = ""):string
     nav_item("index.php", 'Accueil', $linkClass) . 
     nav_item("contact.php", 'Contact', $linkClass) . 
     nav_item("jeu.php", 'Jeu', $linkClass).
-    nav_item("menu.php", 'Menu',$linkClass);
+    nav_item("menu.php", 'Menu',$linkClass).
+    nav_item('newsletter.php', 'Newsletter', $linkClass);
 }
 
 

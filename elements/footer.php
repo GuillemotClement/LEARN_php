@@ -3,7 +3,12 @@
     
     </div>
     <div class="col">
-
+        <form action="newsletter.php" method="post" class="form-inline">
+            <div class="form-group">
+                <input class="form-control my-3" type="email" name="email" placeholder="saisir adresse mail" required>
+            </div>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
     </div>
     <div class="col">
         <h5 class="text-uppercase">Navigation</h5>
